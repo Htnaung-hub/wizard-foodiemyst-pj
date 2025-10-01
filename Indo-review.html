@@ -14,7 +14,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #373735
+           
         }
 
         body {
@@ -31,15 +31,33 @@
             padding: 20px;
             gap: 30px;
         }
-        .links a i{
-            color: rgb(255, 166, 0);
+
+        .links a i {
+            color: rgb(177, 228, 82);
         }
-        .links a i:hover{
-             color: rgb(234, 228, 217);
+
+        .links a i:hover {
+            color: rgb(234, 228, 217);
         }
-        .social-icon a i{
+
+
+
+        .dropdown-menu li a i {
+            color: rgb(177, 228, 82);
+        }
+
+        .dropdown-menu li a i:hover {
+            color: rgb(234, 228, 217);
+        }
+        
+        .dropdown-menu .social-icon a i{
             color: #fff;
         }
+
+        .link .social-icon a i {
+            color: #fff;
+        }
+
         /* Header styling */
         .header {
             margin-top: 64px;
@@ -47,7 +65,7 @@
             text-align: center;
             padding: 20px;
             background-color: #D28254;
-            color: white;
+             color: #373735;
             border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
@@ -165,14 +183,6 @@
             margin: 20px 0;
         }
 
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 30px;
-            color: #777;
-            font-size: 0.9rem;
-        }
 
         /* Responsive design */
         @media (max-width: 1000px) {
@@ -224,7 +234,7 @@
                 <ul class="links">
                     <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
                     <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
-                    <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                    <li><a href="reviewmainpage.html"><i class="fa-solid fa-receipt"></i>Review</a></li>
                     <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
                 </ul>
                 <div class="toggle-btn">
@@ -234,7 +244,7 @@
             <div class="dropdown-menu">
                 <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
                 <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
-                <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                <li><a href="reviewmainpage.html"><i class="fa-solid fa-receipt"></i>Review</a></li>
                 <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
             </div>
         </header>
@@ -337,10 +347,6 @@
             </div>
         </div>
     </div>
-
-    <div class="footer">
-        <p>© 2025 Discover Indonesia's Culinary Treasures</p>
-    </div>
     <footer>
         <div class="wave-container">
             <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -367,7 +373,7 @@
                 <ul class="menu">
                     <li><a href="index.html"></i>Home</a></li>
                     <li><a href="countryNew.html"></i>Country Foods</a></li>
-                    <li><a href="reviewmainpage (1).html"></i>Review</a></li>
+                    <li><a href="reviewmainpage.html"></i>Review</a></li>
                     <li><a href="repro.html"></i>About Us</a></li>
                 </ul>
                 <p>Copyright ©2025 All rights reserved | We are Together <i class="fa fa-heart" style="color: red;"></i>
@@ -389,6 +395,20 @@
                 });
             });
         });
+    </script>
+    <script>
+        const toggleBtn = document.querySelector('.toggle-btn')
+        const toggleBtnIcon = document.querySelector('.toggle-btn i')
+        const dropDownMenu = document.querySelector('.dropdown-menu')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
     </script>
 </body>
 

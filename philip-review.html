@@ -35,7 +35,7 @@
 
         body::before {
             content: "";
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
@@ -46,13 +46,19 @@
             transform: scaleX(1.5);
         }
 
+        @media (max-width: 370px) {
+            body::before {
+                display: none;
+            }
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        .head{
+        .head {
             text-align: center;
             padding: 60px 20px 40px;
             margin-bottom: 30px;
@@ -365,37 +371,61 @@
                 flex-direction: column;
             }
         }
-        h3{
+
+        h3 {
             margin-bottom: 2%;
         }
-       
+
+        @media (max-width: 500px) {
+            body::before {
+                transform: scaleX(1.2);
+                border-radius: 0 0 60% 60%/0 0 80% 80%;
+            }
+
+            .container {
+                max-width: 350px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-         <div class="body1">
-        <header>
-            <div class="navbar">
-                <div class="logo"><a href="#">Witzard Foodiemyst</a></div>
-                <ul class="links">
+        <div class="body1">
+            <header>
+                <div class="navbar">
+                    <div class="logo"><a href="#">Witzard Foodiemyst</a></div>
+                    <ul class="links">
+                        <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                        <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+                        <li><a href="reviewmainpage.html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                        <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+                    </ul>
+                    <div class="toggle-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+                <div class="dropdown-menu">
                     <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
                     <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
-                    <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                    <li><a href="reviewmainpage.html"><i class="fa-solid fa-receipt"></i>Review</a></li>
                     <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
-                </ul>
-                <div class="toggle-btn">
-                    <i class="fa-solid fa-bars"></i>
                 </div>
-            </div>
-            <div class="dropdown-menu">
-                <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
-                <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
-                <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
-                <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
-            </div>
-        </header>
-    </div>
+            </header>
+        </div>
         <div class="head">
             <div class="logo">
                 <i class="fas fa-utensils"></i>
@@ -682,7 +712,7 @@
                 </ul>
             </div>
         </div>
-       
+
         <div id="gallery" class="tab-content">
             <h2 style="text-align: center; margin: 30px 0; color: var(--dark);">Philippine Food Gallery</h2>
 
@@ -737,9 +767,9 @@
                     artistry and tradition.</p>
             </div>
         </div>
-        
+
     </div>
-      <footer>
+    <footer>
         <div class="wave-container">
             <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
@@ -765,7 +795,7 @@
                 <ul class="menu">
                     <li><a href="index.html"></i>Home</a></li>
                     <li><a href="countryNew.html"></i>Country Foods</a></li>
-                    <li><a href="reviewmainpage (1).html"></i>Review</a></li>
+                    <li><a href="reviewmainpage.html"></i>Review</a></li>
                     <li><a href="repro.html"></i>About Us</a></li>
                 </ul>
                 <p>Copyright ©2025 All rights reserved | We are Together <i class="fa fa-heart" style="color: red;"></i>
